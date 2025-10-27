@@ -45,10 +45,20 @@ header .nav-links a:hover {
   color: #121212;
 }
 
+.shop-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.shop-link .cart-container {
+  position: relative;
+  margin-left: 8px;
+}
+
 .cart-container {
   position: relative;
   display: inline-block;
-  margin-left: 10px;
 }
 
 .cart-count {
@@ -65,7 +75,7 @@ header .nav-links a:hover {
   display: none;
   position: absolute;
   right: 0;
-  top: 30px;
+  top: 28px;
   background-color: #1f1f1f;
   border: 1px solid #ffd700;
   padding: 15px;
@@ -88,17 +98,6 @@ header .nav-links a:hover {
 .cart-dropdown li {
   margin-bottom: 10px;
   font-size: 0.95em;
-}
-
-/* Cart bounce animation */
-.cart-bounce {
-  animation: bounce 0.3s;
-}
-
-@keyframes bounce {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.5); }
-  100% { transform: scale(1); }
 }
 
 /* ===== Hero Section ===== */
