@@ -50,6 +50,18 @@ header .nav-links .cart {
   padding: 2px 6px;
   font-weight: bold;
   font-size: 0.9em;
+  display: inline-block;
+}
+
+/* Cart bounce animation */
+.cart-bounce {
+  animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
 }
 
 /* ===== Hero Section ===== */
@@ -138,7 +150,6 @@ header .nav-links .cart {
   border: 1px solid #ffd700;
   border-radius: 10px;
   transition: all 0.3s;
-  cursor: pointer;
 }
 
 .product-box:hover {
@@ -153,6 +164,23 @@ header .nav-links .cart {
   object-fit: cover;
   margin: 10px 0;
   border-radius: 5px;
+}
+
+/* ===== Add to Cart Button ===== */
+.add-cart-btn {
+  background-color: #ffd700;
+  color: #121212;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.add-cart-btn:hover {
+  background-color: #fff;
+  transform: scale(1.05);
 }
 
 /* ===== Footer ===== */
