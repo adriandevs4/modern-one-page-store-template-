@@ -151,13 +151,16 @@ header .nav-links .cart {
   border: 1px solid #ffd700;
   border-radius: 10px;
   transition: all 0.3s;
-  cursor: default; /* only button is clickable */
+  cursor: default; /* box itself not clickable */
 }
 
 .product-box:hover {
-  background-color: #ffd700;
-  color: #121212;
   transform: scale(1.03);
+}
+
+/* Prevent clicks on the product box except the button */
+.product-box *:not(.add-cart-btn) {
+  pointer-events: none;
 }
 
 .product-box img {
@@ -183,6 +186,7 @@ header .nav-links .cart {
   transition: all 0.3s;
   font-size: 1em;
   margin-top: 10px;
+  pointer-events: auto; /* ensures button is clickable */
 }
 
 .add-cart-btn:hover {
