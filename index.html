@@ -87,14 +87,12 @@
     </div>
   </footer>
 
-  <!-- Script for Cart -->
   <script>
     let cartCount = 0;
     function addToCart() {
       cartCount++;
       const cartCounter = document.getElementById('cart-count');
       cartCounter.innerText = cartCount;
-      // Add bounce animation
       cartCounter.classList.add('cart-bounce');
       setTimeout(() => {
         cartCounter.classList.remove('cart-bounce');
