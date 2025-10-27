@@ -10,24 +10,46 @@ body {
 /* ===== Header / Navigation ===== */
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
   background-color: #1f1f1f;
+}
+
+header .brand {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffd700;
 }
 
 header .nav-links a {
   margin-left: 20px;
   text-decoration: none;
   color: #ffd700;
-  padding: 10px 15px;
+  padding: 12px 18px;
   border: 1px solid #ffd700;
   border-radius: 5px;
   transition: all 0.3s;
+  font-size: 1.1em;
 }
 
 header .nav-links a:hover {
   background-color: #ffd700;
   color: #121212;
+}
+
+header .nav-links .cart {
+  margin-left: 8px;
+  font-size: 1em;
+}
+
+.cart-count {
+  background-color: #ffd700;
+  color: #121212;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-weight: bold;
+  font-size: 0.9em;
 }
 
 /* ===== Hero Section ===== */
@@ -36,7 +58,6 @@ header .nav-links a:hover {
   padding: 40px 20px;
 }
 
-/* Hero Box */
 .logo-box {
   width: 100%;
   height: 600px;
@@ -64,22 +85,23 @@ header .nav-links a:hover {
   font-size: 2em;
 }
 
-/* ===== Product Types / Categories ===== */
+/* ===== Product Types ===== */
 .product-types {
   display: flex;
   justify-content: space-between;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 20px auto;
-  flex-wrap: wrap;
 }
 
 .product-types div {
   border: 1px solid #ffd700;
-  padding: 10px;
-  flex: 1 1 150px;
-  margin: 5px;
+  padding: 15px 20px;
+  flex: 1 1 0;
+  margin: 0 5px;
   text-align: center;
+  border-radius: 15px;
   transition: all 0.3s;
+  background-color: #1f1f1f;
 }
 
 .product-types div:hover {
@@ -101,7 +123,6 @@ header .nav-links a:hover {
   margin-bottom: 20px;
 }
 
-/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -117,6 +138,7 @@ header .nav-links a:hover {
   border: 1px solid #ffd700;
   border-radius: 10px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .product-box:hover {
@@ -178,12 +200,12 @@ footer img:hover {
   .overlay-text { font-size: 1.5em; padding: 8px 16px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .product-box { width: 90%; height: auto; }
+  .product-types { flex-direction: column; align-items: center; }
+  .product-types div { width: 90%; margin: 5px 0; }
 }
 
 @media (max-width: 480px) {
   .product-grid { grid-template-columns: 1fr; }
-  .product-types { flex-direction: column; align-items: center; }
-  .product-types div { width: 90%; }
   .logo-box { height: 300px; font-size: 1.2em; }
   .overlay-text { font-size: 1.2em; padding: 6px 12px; }
 }
