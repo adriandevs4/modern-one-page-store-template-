@@ -43,7 +43,7 @@ nav ul li a:hover {
   color: #121212;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   background-color: #1e1e1e;
   padding: 60px 20px;
@@ -57,11 +57,11 @@ nav ul li a:hover {
 
 /* Logo/Image Box */
 .logo-box {
-  border: 2px dashed #d4af37;
-  padding: 60px 20px;
+  border: 3px dotted #ffffff; /* White dotted border */
+  padding: 80px 40px; /* Bigger box */
   display: inline-block;
   margin-bottom: 20px;
-  color: #d4af37;
+  color: #ffffff;
   font-weight: 600;
   font-size: 2em;
   transition: all 0.3s ease;
@@ -184,13 +184,13 @@ footer {
   margin-top: 50px;
 }
 
-footer i {
-  font-size: 1.8em;
-  color: #d4af37;
-  transition: 0.3s;
+footer img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-footer i:hover {
-  color: #f5f5f5;
+footer img:hover {
   transform: scale(1.2);
+  filter: brightness(1.5);
 }
