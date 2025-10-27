@@ -61,6 +61,24 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
+/* ====== Logo/Image Box ====== */
+.logo-box {
+  border: 2px dashed #d4af37;
+  padding: 40px 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #d4af37;
+  font-weight: 600;
+  font-size: 2em;
+  transition: all 0.3s ease;
+}
+
+.logo-box:hover {
+  background-color: #d4af37;
+  color: #121212;
+  transform: scale(1.05);
+}
+
 /* ====== Product Type Boxes ====== */
 .product-types {
   display: flex;
@@ -96,10 +114,22 @@ nav ul li a:hover {
 
 .product-grid-6 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
   gap: 25px;
   padding: 20px 50px;
   margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .product-grid-6 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid-6 {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
 }
 
 .product-box {
