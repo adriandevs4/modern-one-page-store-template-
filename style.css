@@ -39,7 +39,6 @@ header .nav-links a:hover {
 /* Logo / Hero Box */
 .logo-box {
   width: 100%;
-  max-width: 100%;
   height: 600px;
   margin: 0 auto;
   position: relative;
@@ -55,7 +54,6 @@ header .nav-links a:hover {
   font-size: 2em;
 }
 
-/* Overlay text */
 .logo-box .overlay-text {
   position: absolute;
   z-index: 10;
@@ -72,13 +70,14 @@ header .nav-links a:hover {
   justify-content: space-between;
   max-width: 900px;
   margin: 20px auto;
+  flex-wrap: wrap;
 }
 
 .product-types div {
   border: 1px solid #ffd700;
   padding: 10px;
-  flex: 1;
-  margin: 0 5px;
+  flex: 1 1 150px;
+  margin: 5px;
   text-align: center;
   transition: all 0.3s;
 }
@@ -125,7 +124,7 @@ header .nav-links a:hover {
 
 .product-box img {
   width: 100%;
-  height: 280px; /* Force square for product images */
+  height: 280px;
   object-fit: cover;
   margin: 10px 0;
   border-radius: 5px;
@@ -139,7 +138,7 @@ footer {
 }
 
 footer .follow-us {
-  font-size: 1.5em; /* slightly larger */
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -159,4 +158,67 @@ footer img {
 footer img:hover {
   transform: scale(1.2);
   filter: brightness(1.5);
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1024px) {
+  .hero-section .logo-box {
+    height: 500px;
+  }
+  .product-box {
+    width: 220px;
+  }
+  .product-box img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  header .nav-links {
+    flex-wrap: wrap;
+  }
+  header .nav-links a {
+    margin: 5px;
+  }
+  .hero-section .logo-box {
+    height: 400px;
+    font-size: 1.5em;
+  }
+  .overlay-text {
+    font-size: 1.5em;
+    padding: 8px 16px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-box {
+    width: 90%;
+  }
+  .product-box img {
+    height: auto; /* maintain square automatically */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-types {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-types div {
+    width: 90%;
+  }
+  .hero-section .logo-box {
+    height: 300px;
+    font-size: 1.2em;
+  }
+  .overlay-text {
+    font-size: 1.2em;
+    padding: 6px 12px;
+  }
 }
