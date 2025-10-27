@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header>
+    <div class="brand">Brand</div>
     <div class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Shop</a>
+      <a href="#">Shop <span class="cart">🛒 <span id="cart-count" class="cart-count">0</span></span></a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </div>
@@ -37,32 +38,32 @@
   <section class="featured-items">
     <h2>Featured Items</h2>
     <div class="product-grid">
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 1</p>
         <img src="images/placeholder.jpg" alt="Product 1">
         <p>$99.99</p>
       </div>
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 2</p>
         <img src="images/placeholder.jpg" alt="Product 2">
         <p>$89.99</p>
       </div>
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 3</p>
         <img src="images/placeholder.jpg" alt="Product 3">
         <p>$79.99</p>
       </div>
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 4</p>
         <img src="images/placeholder.jpg" alt="Product 4">
         <p>$69.99</p>
       </div>
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 5</p>
         <img src="images/placeholder.jpg" alt="Product 5">
         <p>$59.99</p>
       </div>
-      <div class="product-box">
+      <div class="product-box" onclick="addToCart()">
         <p>Product Name 6</p>
         <img src="images/placeholder.jpg" alt="Product 6">
         <p>$49.99</p>
@@ -79,5 +80,14 @@
       <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
     </div>
   </footer>
+
+  <!-- Script for Cart -->
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cart-count').innerText = cartCount;
+    }
+  </script>
 </body>
 </html>
