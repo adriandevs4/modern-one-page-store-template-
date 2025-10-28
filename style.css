@@ -13,8 +13,18 @@ header{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items
 
 /* nav */
 .nav-links{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-.nav-item, .cart-link{ text-decoration:none; color:var(--gold); padding:8px 12px; border:1px solid var(--gold); border-radius:6px; transition:all .18s ease; font-size:1rem; display:inline-flex; align-items:center; gap:8px; }
+.nav-item, .cart-link{ text-decoration:none; color:var(--gold); padding:8px 12px; border:1px solid var(--gold); border-radius:6px; transition:all .18s ease; font-size:1rem; display:inline-flex; align-items:center; gap:8px; position:relative; }
 .nav-item:hover,.cart-link:hover{ background:var(--gold); color:#111; }
+
+/* cart counter circle */
+.cart-count{ display:inline-block; background:var(--gold); color:#111; font-weight:700; padding:2px 6px; border-radius:50%; margin-left:6px; font-size:0.9rem; }
+
+/* cart dropdown */
+.cart-dropdown{ position:absolute; top:36px; right:0; width:260px; background:var(--card); border:1px solid var(--gold); border-radius:8px; padding:12px; display:none; flex-direction:column; z-index:999; }
+.cart-dropdown ul{ list-style:none; margin:0; padding:0; }
+.cart-dropdown li{ display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,215,0,0.3); }
+.cart-dropdown li:last-child{ border-bottom:none; }
+.cart-dropdown li button{ background:none; border:none; color:var(--gold); cursor:pointer; font-size:1rem; }
 
 /* hero */
 .hero-section{padding:28px 12px 10px;}
@@ -60,34 +70,5 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   .cart-dropdown{ width:92vw; max-width:320px; left:50%; transform:translateX(-50%); }
 
   /* Product types mobile: show only first 4 items */
-  .product-types {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    padding:10px 6px !important;
-    gap:6px !important;
-  }
-
-  .product-types > div.mobile-hide {
-    display: none !important;
-  }
-
-  .product-types > div {
-    flex: 0 0 22% !important;
-    margin:0 !important;       
-    height:16vw !important;
-    border-radius:12px !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    font-weight:600 !important;
-    text-align:center !important;
-    cursor:pointer !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
-  }
-
-  .product-types > div:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 4px 12px rgba(255,215,0,0.4) !important;
-  }
+  .product-types > div:nth-child(5){ display:none; }
 }
