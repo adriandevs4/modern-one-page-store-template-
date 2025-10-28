@@ -31,3 +31,21 @@ function renderCart() {
             });
             li.appendChild(removeBtn);
             cartItemsList.appendChild(li);
+        });
+    }
+}
+
+// Add to cart
+addCartBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        const productName = e.target.parentElement.querySelector('h3').textContent;
+        cartItems.push(productName);
+        updateCartCount();
+        renderCart();
+    });
+});
+
+// Toggle dropdown
+cartLink.addEventListener('click', () => {
+    cartDropdown.classList.toggle('active');
+});
