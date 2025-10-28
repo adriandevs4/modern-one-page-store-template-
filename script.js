@@ -53,7 +53,7 @@ cartLink.addEventListener('click', e => {
 
 // Close dropdown if clicked outside
 document.addEventListener('click', e => {
-    if (!cartLink.contains(e.target)) {
+    if (!cartLink.contains(e.target) && !cartDropdown.contains(e.target)) {
         cartDropdown.classList.remove('active');
     }
 });
