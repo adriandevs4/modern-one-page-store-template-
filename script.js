@@ -44,10 +44,10 @@ function updateCart() {
   cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
   cartTotalPrice.textContent = `$${total.toFixed(2)}`;
 
-  document.querySelectorAll(".remove-item").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const index = e.target.dataset.index;
-      cart.splice(index, 1);
+  const removeButtons = document.querySelectorAll(".remove-item");
+  removeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      cart.splice(btn.dataset.index, 1);
       updateCart();
     });
   });
