@@ -78,11 +78,11 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
     gap:6px !important;
     padding:10px 0 !important;
     flex-wrap: nowrap !important;
-    justify-content: space-between !important;
+    justify-content: center !important; /* center the row */
   }
 
   .product-types > div {
-    flex: 0 0 16% !important;       /* width slightly smaller so all 5 fit */
+    flex: 0 0 14% !important;       /* slightly smaller width so all 5 fit */
     height: 16vw !important;        /* keep square ratio */
     border-radius: 12px !important;
     display: flex !important;
