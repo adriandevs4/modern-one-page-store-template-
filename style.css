@@ -76,12 +76,12 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   .product-grid{ grid-template-columns:1fr; } 
   .logo-box{ height:260px; } 
 
-  /* Fixed mobile cart dropdown: move slightly left so it's fully visible */
+  /* Centered cart dropdown on mobile */
   .cart-dropdown{ 
     width:90vw; 
     max-width:320px; 
-    left:4vw;  
-    transform:translateX(0); 
+    left:50%;  
+    transform:translateX(-50%); 
     top:48px; 
   }
 }
