@@ -79,4 +79,9 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   .logo-box{ height:260px; } 
   /* fixed mobile cart dropdown */
   .cart-dropdown{ width:90vw; max-width:320px; left:50%; transform:translateX(-50%); top:48px; }
+}@media (max-width:560px){ 
+    .cart-dropdown {
+        left: 50% !important;       /* move to center of screen */
+        transform: translateX(-50%) !important; /* adjust so it's perfectly centered */
+    }
 }
