@@ -72,19 +72,24 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   /* Cart dropdown mobile adjustments */
   .cart-dropdown{ width:92vw; max-width:320px; left:50%; transform:translateX(-50%); }
 
-  /* Product types mobile: horizontal squares all in one line */
+  /* Product types mobile: show 4 items in one line with spacing */
   .product-types {
     display: flex !important;
     flex-wrap: nowrap !important;
-    justify-content: space-between !important; /* first and last flush with edges */
+    justify-content: space-between !important; /* spread evenly */
     padding:10px 6px !important;
-    gap:0 !important; /* remove extra gap to prevent overflow */
+    gap:6px !important; /* small gap for spacing */
+  }
+
+  /* hide the 5th product type */
+  .product-types > div:nth-child(5) {
+    display: none !important;
   }
 
   .product-types > div {
-    flex: 0 0 18% !important; /* small enough to fit all 5 */
-    margin:0 !important;       /* remove margin */
-    height:16vw !important;    /* square ratio */
+    flex: 0 0 22% !important; /* width for 4 items with gap */
+    margin:0 !important;       
+    height:16vw !important;    
     border-radius:12px !important;
     display:flex !important;
     align-items:center !important;
