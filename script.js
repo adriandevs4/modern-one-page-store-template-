@@ -4,7 +4,7 @@ const cartLink = document.querySelector('.cart-link');
 const cartDropdown = document.querySelector('.cart-dropdown');
 const cartItemsList = document.querySelector('.cart-items');
 const emptyCartText = document.querySelector('.empty-cart');
-const cartTotalText = document.querySelector('.cart-total');
+const totalPriceEl = document.querySelector('.total-price');
 
 let cartItems = [];
 
@@ -13,21 +13,23 @@ function updateCartCount() {
     cartCount.textContent = cartItems.length;
 }
 
+// Calculate total
+function updateTotal() {
+    let total = 0;
+    cartItems.forEach(item => total += item.price);
+    totalPriceEl.textContent = total.toFixed(2);
+}
+
 // Render mini cart dropdown
 function renderCart() {
     cartItemsList.innerHTML = '';
-    let total = 0;
-
     if (cartItems.length === 0) {
         emptyCartText.style.display = 'block';
-        cartTotalText.textContent = 'Total: $0.00';
     } else {
         emptyCartText.style.display = 'none';
         cartItems.forEach((item, index) => {
             const li = document.createElement('li');
-
-            li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-
+            li.innerHTML = `${item.name} - $${item.price.toFixed(2)}`;
             const removeBtn = document.createElement('button');
             removeBtn.innerHTML = '🗑️';
             removeBtn.addEventListener('click', () => {
@@ -37,26 +39,4 @@ function renderCart() {
             });
             li.appendChild(removeBtn);
             cartItemsList.appendChild(li);
-
-            total += item.price;
         });
-        cartTotalText.textContent = `Total: $${total.toFixed(2)}`;
-    }
-}
-
-// Add to cart
-addCartBtns.forEach((btn, idx) => {
-    btn.addEventListener('click', e => {
-        const productBox = e.target.parentElement;
-        const productName = productBox.querySelector('h3').textContent;
-        const productPrice = parseFloat(productBox.querySelector('p').textContent.replace('$',''));
-        cartItems.push({ name: productName, price: productPrice });
-        updateCartCount();
-        renderCart();
-    });
-});
-
-// Toggle dropdown
-cartLink.addEventListener('click', () => {
-    cartDropdown.classList.toggle('active');
-});
