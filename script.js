@@ -28,7 +28,7 @@ function renderCart() {
             cartItemsList.appendChild(li);
         });
 
-        // Add total and checkout button at the bottom
+        // Total and checkout
         const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
         const totalLi = document.createElement('li');
         totalLi.style.fontWeight = '700';
@@ -48,9 +48,11 @@ function renderCart() {
         checkoutBtn.style.fontWeight = '700';
         cartItemsList.appendChild(checkoutBtn);
 
-        // Attach remove item functionality
+        // Trash hover effect
         const removeButtons = document.querySelectorAll(".remove-item");
         removeButtons.forEach((btn) => {
+            btn.addEventListener("mouseenter", () => { btn.style.color = "#ff4c4c"; });
+            btn.addEventListener("mouseleave", () => { btn.style.color = "var(--gold)"; });
             btn.addEventListener("click", () => {
                 cartItems.splice(btn.dataset.index, 1);
                 updateCartCount();
@@ -79,7 +81,7 @@ cartLink.addEventListener('click', () => {
     cartDropdown.classList.toggle('active');
 });
 
-// Mobile adjustment: keep dropdown visible on screen
+// Mobile adjustment
 function adjustDropdownMobile() {
     if(window.innerWidth <= 560){
         const dropdownWidth = cartDropdown.offsetWidth;
@@ -89,6 +91,5 @@ function adjustDropdownMobile() {
         cartDropdown.style.left = '';
     }
 }
-
 window.addEventListener('resize', adjustDropdownMobile);
 adjustDropdownMobile();
