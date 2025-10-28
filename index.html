@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Modern One-Page Store Template</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,17 +10,25 @@
 
 <header>
   <div class="brand">Brand</div>
-  <nav class="nav-links">
-    <a href="#">Home</a>
+
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#" class="nav-item">Home</a>
+
+    <!-- Cart link: counter is INSIDE the anchor -->
     <div class="cart-wrapper">
-      <a href="#" class="cart-link">Cart <span class="cart-count" id="cart-count">0</span></a>
-      <div class="cart-dropdown" id="cart-dropdown">
+      <a href="#" class="cart-link" id="cart-link" aria-haspopup="true" aria-expanded="false">
+        Cart <span id="cart-count" class="cart-count">0</span>
+      </a>
+
+      <div class="cart-dropdown" id="cart-dropdown" aria-hidden="true">
         <h3>Cart</h3>
-        <ul id="cart-items"></ul>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="cart-empty">Your cart is empty.</div>
       </div>
     </div>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+
+    <a href="#" class="nav-item">About</a>
+    <a href="#" class="nav-item">Contact</a>
   </nav>
 </header>
 
@@ -30,12 +38,12 @@
   </div>
 </section>
 
-<section class="product-types">
-  <div>Product Type 1</div>
-  <div>Product Type 2</div>
-  <div>Product Type 3</div>
-  <div>Product Type 4</div>
-  <div>Product Type 5</div>
+<section class="product-types" role="list">
+  <div role="listitem">Product Type 1</div>
+  <div role="listitem">Product Type 2</div>
+  <div role="listitem">Product Type 3</div>
+  <div role="listitem">Product Type 4</div>
+  <div role="listitem">Product Type 5</div>
 </section>
 
 <section class="featured-items">
@@ -47,30 +55,35 @@
       <p>$49.99</p>
       <button class="add-cart-btn" onclick="addToCart('Product 1')">Add to Cart</button>
     </div>
+
     <div class="product-box">
       <p>Product Name 2</p>
       <img src="images/placeholder.jpg" alt="Product 2">
       <p>$59.99</p>
       <button class="add-cart-btn" onclick="addToCart('Product 2')">Add to Cart</button>
     </div>
+
     <div class="product-box">
       <p>Product Name 3</p>
       <img src="images/placeholder.jpg" alt="Product 3">
       <p>$39.99</p>
       <button class="add-cart-btn" onclick="addToCart('Product 3')">Add to Cart</button>
     </div>
+
     <div class="product-box">
       <p>Product Name 4</p>
       <img src="images/placeholder.jpg" alt="Product 4">
       <p>$29.99</p>
       <button class="add-cart-btn" onclick="addToCart('Product 4')">Add to Cart</button>
     </div>
+
     <div class="product-box">
       <p>Product Name 5</p>
       <img src="images/placeholder.jpg" alt="Product 5">
       <p>$69.99</p>
       <button class="add-cart-btn" onclick="addToCart('Product 5')">Add to Cart</button>
     </div>
+
     <div class="product-box">
       <p>Product Name 6</p>
       <img src="images/placeholder.jpg" alt="Product 6">
