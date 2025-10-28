@@ -1,95 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern One Page Store Template</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Store Template</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <div class="brand">Brand</div>
-  <nav class="nav-links">
-    <a href="#" class="nav-item">Home</a>
-    <a href="#" class="nav-item">About</a>
-    <div class="cart-wrapper">
-      <div class="cart-link">
-        Cart <span class="cart-count">0</span>
+  <header>
+    <div class="brand">Brand</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <div class="cart-container">
+        <a href="#" id="cart-btn">
+          <img src="images/cart-icon.png" alt="Cart" class="cart-icon" />
+          <span id="cart-count">0</span>
+        </a>
+        <div class="cart-dropdown" id="cart-dropdown">
+          <ul id="cart-items"></ul>
+          <div class="cart-total">
+            <span>Total:</span> <span id="cart-total-price">$0.00</span>
+          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
       </div>
-      <div class="cart-dropdown">
-        <ul class="cart-items"></ul>
-        <p class="empty-cart">Your cart is empty</p>
-      </div>
-    </div>
-    <a href="#" class="nav-item">Contact</a>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-<section class="hero-section">
-  <div class="logo-box">
-    <div class="overlay-text">Your Image or Logo Here</div>
-  </div>
-</section>
+  <section class="hero">
+    <img src="images/hero-placeholder.jpg" alt="Hero Image" class="hero-img" />
+  </section>
 
-<section class="product-types">
-  <div>Product Type 1</div>
-  <div>Product Type 2</div>
-  <div>Product Type 3</div>
-  <div>Product Type 4</div>
-</section>
+  <section class="products">
+    <div class="product" data-name="Product 1" data-price="10">
+      <img src="images/placeholder.jpg" alt="Product 1" />
+      <p>Product 1</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Product 2" data-price="15">
+      <img src="images/placeholder.jpg" alt="Product 2" />
+      <p>Product 2</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Product 3" data-price="20">
+      <img src="images/placeholder.jpg" alt="Product 3" />
+      <p>Product 3</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Product 4" data-price="25">
+      <img src="images/placeholder.jpg" alt="Product 4" />
+      <p>Product 4</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
 
-<section class="featured-items">
-  <h2>Featured Products</h2>
-  <div class="product-grid">
-    <div class="product-box">
-      <h3>Product 1</h3>
-      <img src="images/placeholder.jpg" alt="Product 1">
-      <p>$99.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
+  <footer>
+    <p class="follow-text">Follow Us</p>
+    <div class="socials">
+      <img src="images/facebook.png" alt="Facebook" />
+      <img src="images/twitter.png" alt="Twitter" />
+      <img src="images/instagram.png" alt="Instagram" />
     </div>
-    <div class="product-box">
-      <h3>Product 2</h3>
-      <img src="images/placeholder.jpg" alt="Product 2">
-      <p>$89.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
-    </div>
-    <div class="product-box">
-      <h3>Product 3</h3>
-      <img src="images/placeholder.jpg" alt="Product 3">
-      <p>$79.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
-    </div>
-    <div class="product-box">
-      <h3>Product 4</h3>
-      <img src="images/placeholder.jpg" alt="Product 4">
-      <p>$69.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
-    </div>
-    <div class="product-box">
-      <h3>Product 5</h3>
-      <img src="images/placeholder.jpg" alt="Product 5">
-      <p>$59.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
-    </div>
-    <div class="product-box">
-      <h3>Product 6</h3>
-      <img src="images/placeholder.jpg" alt="Product 6">
-      <p>$49.99</p>
-      <button class="add-cart-btn">Add to Cart</button>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <div class="follow-us">Follow Us</div>
-  <div class="social-icons">
-    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-    <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
