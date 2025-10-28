@@ -72,18 +72,18 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   /* Cart dropdown mobile adjustments */
   .cart-dropdown{ width:92vw; max-width:320px; left:50%; transform:translateX(-50%); }
 
-  /* Product types mobile: horizontal scrollable squares */
+  /* Product types mobile: horizontal squares all in one line */
   .product-types {
     display: flex;
-    overflow-x: auto;
-    gap: 10px;
+    gap: 6px;
     padding: 10px 0;
     flex-wrap: nowrap;
+    justify-content:space-between;
   }
 
   .product-types > div {
-    flex: 0 0 120px;      
-    height: 120px;        
+    flex: 0 0 18%;       /* all 5 fit in a single line */
+    height: 18vw;        /* keep square ratio */
     border-radius: 12px;
     display: flex;
     align-items: center;
