@@ -32,13 +32,10 @@ header{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items
 .cart-dropdown ul{ list-style:none; margin:0; padding:0; }
 .cart-dropdown li{ display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,215,0,0.3); }
 .cart-dropdown li:last-child{ border-bottom:none; }
-.cart-dropdown li button{ background:none; border:none; color:var(--gold); cursor:pointer; font-size:1rem; }
+.cart-dropdown li button{ background:none; border:none; color:var(--gold); cursor:pointer; font-size:1rem; transition: color .18s ease; }
 .cart-dropdown li button:hover{ color:#ff4c4c; } /* trash hover */
-.cart-dropdown.active{ display:flex; }
-
-/* cart total & checkout */
-.cart-total{ font-weight:700; margin-top:8px; text-align:right; }
-.checkout-btn{ margin-top:8px; padding:8px 12px; border:none; border-radius:6px; background:var(--gold); color:#111; font-weight:700; cursor:pointer; }
+.cart-dropdown .cart-total{ font-weight:700; margin-top:8px; text-align:right; }
+.cart-dropdown .checkout-btn{ margin-top:6px; padding:8px 10px; background:var(--gold); border:none; color:#111; font-weight:700; border-radius:6px; cursor:pointer; }
 
 /* hero */
 .hero-section{padding:28px 12px 10px;}
@@ -79,16 +76,6 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   .brand{ font-size:1.25rem; } 
   .product-grid{ grid-template-columns:1fr; } 
   .logo-box{ height:260px; } 
-
-  /* Center cart dropdown on mobile */
-  .cart-wrapper{ position: static; }
-  .cart-dropdown{ 
-    position: fixed !important; 
-    width:90vw; 
-    max-width:320px; 
-    left:50%;  
-    transform:translateX(-50%); 
-    top:60px; 
-    z-index:9999;
-  }
+  /* cart dropdown fixed for mobile - centered */
+  .cart-dropdown{ width:90vw; max-width:320px; left:50%; transform:translateX(-50%); }
 }
