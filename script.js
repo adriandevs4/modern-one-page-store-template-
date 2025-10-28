@@ -31,29 +31,3 @@ function renderCart() {
             });
             li.appendChild(removeBtn);
             cartItemsList.appendChild(li);
-        });
-    }
-}
-
-// Add to cart
-addCartBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const productName = btn.closest('.product-box').querySelector('h3').textContent;
-        cartItems.push(productName);
-        updateCartCount();
-        renderCart();
-    });
-});
-
-// Toggle dropdown on click
-cartLink.addEventListener('click', e => {
-    e.preventDefault();
-    cartDropdown.classList.toggle('active');
-});
-
-// Close dropdown if clicked outside
-document.addEventListener('click', e => {
-    if (!cartLink.contains(e.target) && !cartDropdown.contains(e.target)) {
-        cartDropdown.classList.remove('active');
-    }
-});
