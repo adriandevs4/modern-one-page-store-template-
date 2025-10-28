@@ -87,3 +87,16 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
         top: 48px;
     }
 }
+
+/* --- Force mobile cart dropdown centered --- */
+@media (max-width: 560px) {
+    header .cart-dropdown {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 48px !important;
+        width: 90vw !important;
+        max-width: 320px !important;
+        z-index: 999 !important;
+    }
+}
