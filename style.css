@@ -74,28 +74,28 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
 
   /* Product types mobile: horizontal squares all in one line */
   .product-types {
-    display: flex;
-    gap: 6px;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    justify-content:space-between;
+    display: flex !important;
+    gap: 6px !important;
+    padding: 10px 0 !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
   }
 
   .product-types > div {
-    flex: 0 0 18%;       /* all 5 fit in a single line */
-    height: 18vw;        /* keep square ratio */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 0 0 16% !important;       /* smaller width so all 5 fit */
+    height: 16vw !important;        /* keep square ratio */
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
   }
 
   .product-types > div:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(255,215,0,0.4) !important;
   }
 }
