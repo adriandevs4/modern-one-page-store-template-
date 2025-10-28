@@ -100,3 +100,20 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
         z-index: 999 !important;
     }
 }
+
+/* --- Correct mobile cart dropdown centering --- */
+@media (max-width: 560px) {
+    header {
+        position: relative; /* ensure absolute dropdown is relative to header */
+    }
+
+    header .cart-dropdown {
+        position: fixed !important;  /* fixed to viewport, not header */
+        top: 60px !important;        /* distance from top, adjust if needed */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 90vw !important;
+        max-width: 320px !important;
+        z-index: 9999 !important;
+    }
+}
