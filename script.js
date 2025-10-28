@@ -1,31 +1,59 @@
-// Select all add-to-cart buttons
 const addCartBtns = document.querySelectorAll('.add-cart-btn');
-
-// Cart count element
 const cartCount = document.querySelector('.cart-count');
+const cartLink = document.querySelector('.cart-link');
+const cartDropdown = document.querySelector('.cart-dropdown');
+const cartItemsList = document.querySelector('.cart-items');
+const emptyCartText = document.querySelector('.empty-cart');
 
-// Array to hold cart items
 let cartItems = [];
 
-// Function to update the cart count
+// Update counter
 function updateCartCount() {
     cartCount.textContent = cartItems.length;
 }
 
-// Function to add item to cart
-function addToCart(productName) {
-    cartItems.push(productName);
-    updateCartCount();
+// Render mini cart dropdown
+function renderCart() {
+    cartItemsList.innerHTML = '';
+    if (cartItems.length === 0) {
+        emptyCartText.style.display = 'block';
+    } else {
+        emptyCartText.style.display = 'none';
+        cartItems.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            const removeBtn = document.createElement('button');
+            removeBtn.innerHTML = '🗑️';
+            removeBtn.addEventListener('click', () => {
+                cartItems.splice(index, 1);
+                updateCartCount();
+                renderCart();
+            });
+            li.appendChild(removeBtn);
+            cartItemsList.appendChild(li);
+        });
+    }
 }
 
-// Event listeners for all add-to-cart buttons
-addCartBtns.forEach((btn, index) => {
+// Add to cart
+addCartBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Grab the product name from the card
         const productName = btn.closest('.product-box').querySelector('h3').textContent;
-        addToCart(productName);
+        cartItems.push(productName);
+        updateCartCount();
+        renderCart();
     });
 });
 
-// OPTIONAL: If you want a remove feature (like a trash icon) inside cart dropdown
-// you would create cart dropdown HTML and attach similar click handlers to remove items
+// Toggle dropdown on click
+cartLink.addEventListener('click', e => {
+    e.preventDefault();
+    cartDropdown.classList.toggle('active');
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', e => {
+    if (!cartLink.contains(e.target)) {
+        cartDropdown.classList.remove('active');
+    }
+});
