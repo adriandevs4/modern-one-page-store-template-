@@ -4,7 +4,7 @@ const cartLink = document.querySelector('.cart-link');
 const cartDropdown = document.querySelector('.cart-dropdown');
 const cartItemsList = document.querySelector('.cart-items');
 const emptyCartText = document.querySelector('.empty-cart');
-const totalPriceEl = document.querySelector('.total-price');
+const cartTotal = document.querySelector('.cart-total');
 
 let cartItems = [];
 
@@ -17,7 +17,7 @@ function updateCartCount() {
 function updateTotal() {
     let total = 0;
     cartItems.forEach(item => total += item.price);
-    totalPriceEl.textContent = total.toFixed(2);
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
 }
 
 // Render mini cart dropdown
@@ -29,14 +29,36 @@ function renderCart() {
         emptyCartText.style.display = 'none';
         cartItems.forEach((item, index) => {
             const li = document.createElement('li');
-            li.innerHTML = `${item.name} - $${item.price.toFixed(2)}`;
+            li.textContent = `${item.name} - $${item.price}`;
             const removeBtn = document.createElement('button');
             removeBtn.innerHTML = '🗑️';
             removeBtn.addEventListener('click', () => {
                 cartItems.splice(index, 1);
                 updateCartCount();
                 renderCart();
+                updateTotal();
             });
             li.appendChild(removeBtn);
             cartItemsList.appendChild(li);
         });
+    }
+}
+
+// Add to cart
+addCartBtns.forEach((btn, index) => {
+    btn.addEventListener('click', e => {
+        const productBox = e.target.parentElement;
+        const productName = productBox.querySelector('h3').textContent;
+        const priceText = productBox.querySelector('p').textContent.replace('$','');
+        const price = parseFloat(priceText);
+        cartItems.push({name: productName, price: price});
+        updateCartCount();
+        renderCart();
+        updateTotal();
+    });
+});
+
+// Toggle dropdown
+cartLink.addEventListener('click', () => {
+    cartDropdown.classList.toggle('active');
+});
