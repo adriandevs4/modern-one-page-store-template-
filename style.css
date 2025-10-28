@@ -75,23 +75,23 @@ footer{ padding:18px 12px; text-align:center; background:var(--card); margin-top
   /* Product types mobile: horizontal squares all in one line */
   .product-types {
     display: flex !important;
-    gap:4px !important; /* smaller gap to prevent overflow */
-    padding:10px 0 !important;
     flex-wrap: nowrap !important;
-    justify-content: center !important; /* center the row */
+    justify-content: space-between !important; /* first and last flush with edges */
+    padding:10px 6px !important;
+    gap:0 !important; /* remove extra gap to prevent overflow */
   }
 
   .product-types > div {
-    flex: 0 0 14% !important;       /* width small enough to fit all 5 */
-    margin: 0 !important;           /* remove extra margins */
-    height: 16vw !important;        /* keep square ratio */
-    border-radius: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-weight: 600 !important;
-    text-align: center !important;
-    cursor: pointer !important;
+    flex: 0 0 18% !important; /* small enough to fit all 5 */
+    margin:0 !important;       /* remove margin */
+    height:16vw !important;    /* square ratio */
+    border-radius:12px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-weight:600 !important;
+    text-align:center !important;
+    cursor:pointer !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
   }
 
