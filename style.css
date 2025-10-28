@@ -121,6 +121,21 @@ nav a {
   display: block;
 }
 
+.product-types {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.product-type {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -186,7 +201,7 @@ footer {
   }
 
   .cart-dropdown {
-    right: -20px; /* shifted slightly left */
+    right: -20px; /* slightly shifted left for mobile */
   }
 
   .products {
@@ -196,5 +211,12 @@ footer {
 
   .product {
     flex: 0 0 160px;
+  }
+
+  .product-types {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 10px;
   }
 }
